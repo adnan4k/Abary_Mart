@@ -14,10 +14,10 @@ const productSchema = new mongoose.Schema({
         type:Number
     },
     featured:{
-        type:true
+        type:Boolean
     }
 })
 
-const Product = mongoose.model('Product', productSchema);
+export  const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product;
+ 

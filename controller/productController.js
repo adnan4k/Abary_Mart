@@ -1,13 +1,13 @@
-import Product from "../model/Product"
+import {Product} from "../model/Product.js"
 export const createProduct = async (req,res)=>{
   
-    const product = {
+    const {
         title,
         image,
         description,
         price,
         featured
-    }
+    } = req.body;
 
     try {
         const product = new Product ({
@@ -27,6 +27,6 @@ export const createProduct = async (req,res)=>{
       
 
     } catch (error) {
-        
+        console.log(error)
     }
 }

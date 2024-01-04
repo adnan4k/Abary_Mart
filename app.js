@@ -1,14 +1,17 @@
 
 import express from 'express';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import productRoutes from './route/productRoute.js';
 
 
 const app = express();
+app.use(express.json());
 const PORT = 5000;
+// app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+
+app.use('/product',productRoutes)
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
   .then(() => {
