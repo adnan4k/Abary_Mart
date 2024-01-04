@@ -11,10 +11,9 @@ const bannerSchema = new mongoose.Schema({
         type:String
     },
      buttonText:{
-        type:Number
+        type:String
     }
 })
 
-const Banner = mongoose.model('Banner', bannerSchema);
+export const Banner = mongoose.model('Banner', bannerSchema);
 
-module.exports = Banner;

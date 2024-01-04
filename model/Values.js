@@ -12,6 +12,5 @@ const valuesSchema = new mongoose.Schema({
     }
 })
 
-const Values = mongoose.model('Values', valuesSchema);
+export const Values = mongoose.model('Values', valuesSchema);
 
-module.exports = Values;
