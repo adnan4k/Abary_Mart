@@ -53,3 +53,16 @@ export const updateValues = async(req,res,next) =>{
         return res.status(500).json({message:error.message})
     }
 }
+
+export const allValues = async(req,res) =>{
+    let values;
+    try {
+       values = await Values.find()
+    } catch (error) {
+        return res.status(500).json({message:"server error"})
+    }
+    if(!values){
+        return res.status(404).json({message:"noValues"})
+    }
+    return res.status(200).json(values);
+}

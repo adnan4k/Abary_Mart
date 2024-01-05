@@ -56,3 +56,16 @@ export const updateBanner = async(req,res,next) =>{
         return res.status(500).json({message:error.message})
     }
 }
+
+export const allBanner = async(req,res) =>{
+    let banners;
+    try {
+       banners = await Banner.find()
+    } catch (error) {
+        return res.status(500).json({message:"server error"})
+    }
+    if(!banners){
+        return res.status(404).json({message:"noBanner"})
+    }
+    return res.status(200).json(banners);
+}

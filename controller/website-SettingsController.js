@@ -74,3 +74,16 @@ export const updateSetting = async(req,res,next) =>{
         return res.status(500).json({message:error.message})
     }
 }
+
+export const allWebsetting = async(req,res) =>{
+    let websetting;
+    try {
+       websetting = await webSetting.find()
+    } catch (error) {
+        return res.status(500).json({message:"server error"})
+    }
+    if(!websetting){
+        return res.status(404).json({message:"noProduct"})
+    }
+    return res.status(200).json(websetting);
+}

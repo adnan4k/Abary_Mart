@@ -57,3 +57,16 @@ export const updateProduct = async(req,res,next) =>{
         return res.status(500).json({message:error.message})
     }
 }
+
+export const allProduct = async(req,res) =>{
+    let Products;
+    try {
+       Products = await Product.find()
+    } catch (error) {
+        return res.status(500).json({message:"server error"})
+    }
+    if(!Products){
+        return res.status(404).json({message:"noProduct"})
+    }
+    return res.status(200).json(Products);
+}
