@@ -27,3 +27,32 @@ export const createBanner = async (req,res)=>{
         console.log(error)
     }
 }
+
+
+export const updateBanner = async(req,res,next) =>{
+    const {   
+        title,
+        image,
+       description,
+       buttonText
+} = req.body;
+    const {id} = req.params;
+    
+
+    try {
+    const webBanners = await Banner.findByIdAndUpdate(id,{
+        title:title,
+        image:image,
+        buttonText:buttonText,
+        description:description
+    })    
+       const savedBanner = await webBanners.save();
+    if(!savedBanner){
+     return res.status(500).json({message:"error while saving"});
+    }
+
+    return res.status(200).json(savedBanner)
+    } catch (error) {
+        return res.status(500).json({message:error.message})
+    }
+}
