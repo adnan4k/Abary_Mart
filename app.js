@@ -1,5 +1,6 @@
 
 import express from 'express';
+import session from 'express-session';
 import mongoose from 'mongoose';
 import productRoutes from './route/productRoute.js';
 import bannerRoutes from './route/bannerRoute.js';
@@ -11,6 +12,12 @@ import userRoutes from './route/userRoute.js';
 const app = express();
 app.use(express.json());
 const PORT = 5000;
+
+app.use(session({
+  secret: 'user',
+  resave: false,
+  saveUninitialized: true
+}));
 // app.use(bodyParser.json());
 
 
