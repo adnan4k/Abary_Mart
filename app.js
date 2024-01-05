@@ -5,6 +5,7 @@ import productRoutes from './route/productRoute.js';
 import bannerRoutes from './route/bannerRoute.js';
 import valuesRoutes from './route/valuesRoute.js';
 import websettingRoutes from './route/websiteSettingRoute.js';
+import userRoutes from './route/userRoute.js';
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use('/product',productRoutes)
 app.use('/banner',bannerRoutes)
 app.use('/values',valuesRoutes)
 app.use('/web-setting',websettingRoutes)
+app.use('/user',userRoutes)
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
   .then(() => {
