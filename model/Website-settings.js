@@ -11,22 +11,21 @@ const webSettingSchema = new mongoose.Schema({
         type:String
     },
      favicon:{
-        type:Number
+        type:String
     },
     email:{
-        type:true
+        type:String
     },
     number:{
-        type:true
+        type:String
     },
     location:{
-        type:true
+        type:String
     },
     address:{
-        type:true
+        type:String
     },
 })
 
-const webSetting = mongoose.model('webSetting', webSettingSchema);
+export const webSetting = mongoose.model('webSetting', webSettingSchema);
 
-module.exports = webSetting;
