@@ -67,5 +67,5 @@ export const allBanner = async(req,res) =>{
     if(!banners){
         return res.status(404).json({message:"noBanner"})
     }
-    return res.status(200).json(banners);
+    return res.render('banner',{banners});
 }

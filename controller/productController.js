@@ -68,5 +68,5 @@ export const allProduct = async(req,res) =>{
     if(!Products){
         return res.status(404).json({message:"noProduct"})
     }
-    return res.status(200).json(Products);
+    return res.render('product',{Products});
 }

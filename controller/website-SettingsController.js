@@ -85,5 +85,5 @@ export const allWebsetting = async(req,res) =>{
     if(!websetting){
         return res.status(404).json({message:"noProduct"})
     }
-    return res.status(200).json(websetting);
+    return res.render('web-setting',{websetting});
 }

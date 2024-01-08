@@ -37,7 +37,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
-  res.render('index')
+  res.render('product')
 })
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")

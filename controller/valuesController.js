@@ -64,5 +64,5 @@ export const allValues = async(req,res) =>{
     if(!values){
         return res.status(404).json({message:"noValues"})
     }
-    return res.status(200).json(values);
+    return res.render('value',{values});
 }
