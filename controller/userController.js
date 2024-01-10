@@ -26,14 +26,17 @@ export const addUser = async(req,res) =>{
     }
 }
 
+export const viewLogin = async(req,res) =>{
+    return res.render('login');
+}
 export const login = async(req,res) =>{
     
-        const { name, password } = req.body;
-
-        if(!name && !password){
+        const { email, password } = req.body;
+        // return res.status(400).json({email,password})
+        if(!email && !password){
             return res.status(400).json({message:"give credentials"})
         }
-        const user = await User.findOne({name});
+        const user = await User.findOne({email});
         let passwordMatch
         if(user){
 
@@ -43,9 +46,11 @@ export const login = async(req,res) =>{
         if (passwordMatch) {
             req.session.userId = user.id;
             
-            return res.status(200).json({message:"successfull login",userId:user.id})
+            // return res.render(200).json({message:"successfull login",userId:user.id})
+            return res.render('login',{userId:user.id});
+
         } else {
-           return res.send('Invalid credentials');
+           return res.render('login',{failru:"Invalid credentials"});
         }
    
     

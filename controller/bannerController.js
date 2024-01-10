@@ -1,6 +1,12 @@
 import {Banner} from '../model/Banner.js'
+
+
+
+export const presentBanner = async(req,res) =>{
+    return res.render('createBanner')
+} 
 export const createBanner = async (req,res)=>{
-  
+
     const {
         title,
         image,
@@ -59,6 +65,8 @@ export const updateBanner = async(req,res,next) =>{
 
 export const allBanner = async(req,res) =>{
     let banners;
+    let myRoute = '/banner/present-banner'
+    // return res.json({myRoute:'/banner/present-banner'})
     try {
        banners = await Banner.find()
     } catch (error) {
@@ -67,5 +75,8 @@ export const allBanner = async(req,res) =>{
     if(!banners){
         return res.status(404).json({message:"noBanner"})
     }
-    return res.render('banner',{banners});
+    //    console.log(myRoute)
+    return res.render('banner',{banners,
+        title:"Banner",
+    myRoute:'/banner/present-banner'});
 }

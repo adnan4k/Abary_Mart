@@ -1,4 +1,8 @@
 import { webSetting } from "../model/Website-settings.js";
+
+export const presentWebsetting = async(req,res) =>{
+    return res.render('createWebsetting')
+}
 export const createwebsiteSetting = async (req,res)=>{
   
     const {
@@ -85,5 +89,7 @@ export const allWebsetting = async(req,res) =>{
     if(!websetting){
         return res.status(404).json({message:"noProduct"})
     }
-    return res.render('web-setting',{websetting});
+    return res.render('web-setting',{websetting,
+        title:"Setting",
+    myRoute:"/web-setting/present-setting"});
 }

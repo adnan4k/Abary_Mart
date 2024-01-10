@@ -1,4 +1,10 @@
 import {Product} from "../model/Product.js"
+
+export const presentProduct = async(req,res) =>{
+    res.render('createProduct',{
+        button:"there is not button here ",topic:"add product"
+    })
+}
 export const createProduct = async (req,res)=>{
   
     const {
@@ -8,7 +14,7 @@ export const createProduct = async (req,res)=>{
         price,
         featured
     } = req.body;
-
+//  return res.json({title,image,description})
     try {
         const product = new Product ({
             title:title,
@@ -60,6 +66,7 @@ export const updateProduct = async(req,res,next) =>{
 
 export const allProduct = async(req,res) =>{
     let Products;
+    // return res.json({route:'/product/create-product'})
     try {
        Products = await Product.find()
     } catch (error) {
@@ -68,5 +75,7 @@ export const allProduct = async(req,res) =>{
     if(!Products){
         return res.status(404).json({message:"noProduct"})
     }
-    return res.render('product',{Products});
+    return res.render('product',{Products,
+        title:"Product",
+    myRoute:'/product/present-product'});
 }

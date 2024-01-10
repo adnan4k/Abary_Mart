@@ -1,4 +1,9 @@
 import {Values} from "../model/Values.js"
+
+
+export const presentValues = async(req,res) =>{
+    return res.render('createValue');
+}
 export const createValues = async (req,res)=>{
   
     const {
@@ -64,5 +69,5 @@ export const allValues = async(req,res) =>{
     if(!values){
         return res.status(404).json({message:"noValues"})
     }
-    return res.render('value',{values});
+    return res.render('value',{values,title:"Values",myRoute:"/values/present-values"});
 }

@@ -16,6 +16,7 @@ import path from 'path'
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 const PORT = 5000;
 
 app.use(session({
@@ -37,7 +38,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
-  res.render('product')
+  res.render('layout')
 })
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
