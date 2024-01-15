@@ -16,7 +16,7 @@ const webSettingSchema = new mongoose.Schema({
     email:{
         type:String
     },
-    number:{
+    phone:{
         type:String
     },
     location:{

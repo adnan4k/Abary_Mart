@@ -1,12 +1,15 @@
 import express  from "express"
-import { allWebsetting, createwebsiteSetting, presentWebsetting, updateSetting } from "../controller/website-SettingsController.js";
+import { allWebsetting, createwebsiteSetting, deletewebsetting, update, updateSetting } from "../controller/website-SettingsController.js";
 
 const websettingRoutes = express.Router();
 
 websettingRoutes.post('/create-setting',createwebsiteSetting);
-websettingRoutes.put('/update-setting/:id',updateSetting);
+websettingRoutes.post('/update-setting/:id',updateSetting);
 websettingRoutes.get('/view-setting',allWebsetting);
-websettingRoutes.get('/present-setting',presentWebsetting);
+websettingRoutes.get('/present-setting/:id',update);
+websettingRoutes.get('/present-setting/',update);
+websettingRoutes.get('/edit/:id',update);
+websettingRoutes.delete('/delete/:id',deletewebsetting);
 
 
 export default websettingRoutes;

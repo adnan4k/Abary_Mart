@@ -1,15 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
-</head>
-<body class="flex">
     
 <%- include('layout'); -%>
 
@@ -18,16 +7,26 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    websettings name
+                     name
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Description
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Image
+                    logo
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    email
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Price
+                    phone
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    location
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    address
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Actions
@@ -44,15 +43,33 @@
                         <%= websettings.description %>
                     </td>
                     <td class="px-6 py-4">
-                        <%= websettings.image %>
+                        <%= websettings.logo %>
+                    </td>
+                    
+                    <td class="px-6 py-4">
+                        <%= websettings.email %>
                     </td>
                     <td class="px-6 py-4">
-                        <%= websettings.price %>
+                        <%= websettings.phone %>
                     </td>
                     <td class="px-6 py-4">
-                        <i class="fas fa-edit cursor-pointer"></i>
-                        <i class="fas fa-trash m-3 cursor-pointer"></i>
+                        <%= websettings.location %>
                     </td>
+                    <td class="px-6 py-4">
+                        <%= websettings.address %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <form action="/web-setting/edit/<%= websettings.id %>" class="inline"  method="get">
+                            <button type="submit">
+                                <i class="fas fa-edit"></i>
+                             </button>
+                            </form>                 
+                            <form action="/web-setting/delete/<%= websettings.id %>?_method=delete" class="inline" method="post">
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit">
+                                    <i class="fas fa-trash m-3"></i>
+                                 </button>
+                            </form>                     </td>
                     <!-- <td class="px-6 py-4">
                         <i class="fas fa-trash"></i>
                     </td> -->

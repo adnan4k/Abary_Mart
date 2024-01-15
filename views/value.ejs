@@ -1,16 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
-</head>
-<body class="flex">
-    
+
 <%- include('layout'); -%>
 
 <div class="relative overflow-x-auto w-full h-full">
@@ -42,13 +31,21 @@
                         <%= value.description %>
                     </td>
                     <td class="px-6 py-4">
-                        <%= value.image %>
+                        <img src="/backend/images/ value ? value.image : '' %>" alt="Image">
                     </td>
                     
                     <td class="px-6 py-4">
-                        <i class="fas fa-edit cursor-pointer"></i>
-                        <i class="fas fa-trash m-3 cursor-pointer"></i>
-                    </td>
+                        <form action="/values/edit/<%= value.id %>" class="inline" method="get">
+                            <button type="submit">
+                                <i class="fas fa-edit"></i>
+                             </button>
+                            </form>
+                            <form action="/values/delete/<%= value.id %>?_method=delete" class="inline" method="post">
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit">
+                                    <i class="fas fa-trash m-3"></i>
+                                 </button>
+                            </form>                    </td>
                     <!-- <td class="px-6 py-4">
                         <i class="fas fa-trash"></i>
                     </td> -->

@@ -27,7 +27,7 @@ export const addUser = async(req,res) =>{
 }
 
 export const viewLogin = async(req,res) =>{
-    return res.render('login');
+    return res.render('login',{login:"login"});
 }
 export const login = async(req,res) =>{
     
@@ -50,7 +50,8 @@ export const login = async(req,res) =>{
             return res.render('login',{userId:user.id});
 
         } else {
-           return res.render('login',{failru:"Invalid credentials"});
+           return res.render('login',{failru:"Invalid credentials",
+           });
         }
    
     

@@ -3,7 +3,7 @@ import {Banner} from '../model/Banner.js'
 
 
 export const presentBanner = async(req,res) =>{
-    return res.render('createBanner')
+    return res.render('createBanner', {n:88})
 } 
 export const createBanner = async (req,res)=>{
 
@@ -26,7 +26,7 @@ export const createBanner = async (req,res)=>{
         if (!savedBanner) {
             return res.status(400).json({ message: "cannot be created " });
           }
-          return res.status(201).json({ savedBanner });
+          res.redirect('/banner/view-banner');
       
 
     } catch (error) {
@@ -34,10 +34,32 @@ export const createBanner = async (req,res)=>{
     }
 }
 
-
+export const deleteBanner = async(req,res) =>{
+    const id = req.params.id 
+    try {
+        const deleted = await Banner.findByIdAndDelete(id);
+        console.log(deleted)
+        if(!deleted){
+            return res.json({message:"items is not doesn't exist"})
+        }
+            
+        res.redirect('/banner/view-banner')
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
+export const update =  async (req, res) => {
+    try {
+        const id = req.params.id;
+        const banner = await Banner.findById(id);
+        res.render('createBanner', { banner});
+    } catch (error) {
+        res.status(500).send('Error: ' + error.message);
+    }
+};
 export const updateBanner = async(req,res,next) =>{
     const {   
-        title,
+        title,  
         image,
        description,
        buttonText
@@ -57,7 +79,7 @@ export const updateBanner = async(req,res,next) =>{
      return res.status(500).json({message:"error while saving"});
     }
 
-    return res.status(200).json(savedBanner)
+    res.redirect('/banner/view-banner');
     } catch (error) {
         return res.status(500).json({message:error.message})
     }
@@ -66,7 +88,6 @@ export const updateBanner = async(req,res,next) =>{
 export const allBanner = async(req,res) =>{
     let banners;
     let myRoute = '/banner/present-banner'
-    // return res.json({myRoute:'/banner/present-banner'})
     try {
        banners = await Banner.find()
     } catch (error) {
@@ -75,7 +96,7 @@ export const allBanner = async(req,res) =>{
     if(!banners){
         return res.status(404).json({message:"noBanner"})
     }
-    //    console.log(myRoute)
+    // return res.json(banners)
     return res.render('banner',{banners,
         title:"Banner",
     myRoute:'/banner/present-banner'});

@@ -1,8 +1,31 @@
 import {Values} from "../model/Values.js"
 
+export const deleteValues = async(req,res) =>{
+    const id = req.params.id 
+         console.log("id",id)
+    try {
+        const deleted = await Values.findByIdAndDelete(id);
+        if(!deleted){
+            return res.json({message:"items  doesn't exist"})
+        }
+            
+        res.redirect('/values/view-values')
+    } catch (error) {
+        return res.status(500).json(error)
+    }
+}
 
+export const update =  async (req, res) => {
+    try {
+        const id = req.params.id;
+        const value = await Values.findById(id);
+        res.render('createValue', { value});
+    } catch (error) {
+        res.status(500).send('Error: ' + error.message);
+    }
+};
 export const presentValues = async(req,res) =>{
-    return res.render('createValue');
+    return res.render('createValue',{Values:undefined});
 }
 export const createValues = async (req,res)=>{
   
@@ -11,7 +34,7 @@ export const createValues = async (req,res)=>{
         image,
         description,
     } = req.body;
-
+    
     try {
         const value = new Values ({
             title:title,
@@ -24,7 +47,7 @@ export const createValues = async (req,res)=>{
         if (!savedValues) {
             return res.status(400).json({ message: "cannot be created " });
           }
-          return res.status(201).json({ savedValues });
+          res.redirect('/values/view-values');
       
 
     } catch (error) {
@@ -53,8 +76,8 @@ export const updateValues = async(req,res,next) =>{
      return res.status(500).json({message:"error while saving"});
     }
 
-    return res.status(200).json(savedValues)
-    } catch (error) {
+    res.redirect('/values/view-values');
+} catch (error) {
         return res.status(500).json({message:error.message})
     }
 }

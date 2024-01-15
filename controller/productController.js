@@ -1,12 +1,43 @@
 import {Product} from "../model/Product.js"
 
-export const presentProduct = async(req,res) =>{
-    res.render('createProduct',{
-        button:"there is not button here ",topic:"add product"
-    })
+
+
+export const deleteProduct = async(req,res) =>{
+    const id = req.params.id 
+         console.log("id",id)
+    try {
+        const found = await Product.findById(id)
+        // console.log(found)
+        const deleted = await Product.findByIdAndDelete(id);
+        // console.log(deleted)
+        if(!deleted){
+            return res.json({message:"items  doesn't exist"})
+        }
+            
+        res.redirect('/product/view-product')
+    } catch (error) {
+        return res.status(500).json(error)
+    }
 }
-export const createProduct = async (req,res)=>{
+
+export const update =  async (req, res) => {
+    try {
+        const id = req.params.id;
+        const product = await Product.findById(id);
+        console.log(product);
+        res.render('createProduct', { product });
+    } catch (error) {
+        res.status(500).send('Error: ' + error.message);
+    }
+};
+export const presentProduct = async(req,res) =>{
   
+    return res.render('createProduct', {product:undefined} )
+} 
+
+
+export const createProduct = async (req,res)=>{
+  console.log("i'm here in product");
     const {
         title,
         image,
@@ -14,7 +45,7 @@ export const createProduct = async (req,res)=>{
         price,
         featured
     } = req.body;
-//  return res.json({title,image,description})
+ console.log({title,image,description})
     try {
         const product = new Product ({
             title:title,
@@ -29,7 +60,7 @@ export const createProduct = async (req,res)=>{
         if (!savedProduct) {
             return res.status(400).json({ message: "cannot be created " });
           }
-          return res.status(201).json({ savedProduct });
+          res.redirect('/product/view-product');
       
 
     } catch (error) {
@@ -38,6 +69,7 @@ export const createProduct = async (req,res)=>{
 }
 
 export const updateProduct = async(req,res,next) =>{
+
     const { 
           
         title,
@@ -45,7 +77,7 @@ export const updateProduct = async(req,res,next) =>{
         description,
     } = req.body;
     const {id} = req.params;
-    
+
 
     try {
     const product = await Product.findByIdAndUpdate(id,{
@@ -58,7 +90,7 @@ export const updateProduct = async(req,res,next) =>{
      return res.status(500).json({message:"error while saving"});
     }
 
-    return res.status(200).json(savedProduct)
+    res.redirect('/product/view-product');
     } catch (error) {
         return res.status(500).json({message:error.message})
     }

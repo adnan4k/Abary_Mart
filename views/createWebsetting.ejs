@@ -9,49 +9,49 @@
 </head>
 <body>
     
-<form class="max-w-sm mx-auto mt-5 " method="post" action="/banner/create-banner">
+<form class="max-w-sm mx-auto mt-5 grid" method="post" action="<%=websetting ? '/web-setting/update-setting/' +websetting.id : '/web-setting/create-setting' %>">
     <div class="gird grid-cols-2">
     <div class="mb-5">
         <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            Create Web setting
+            <%= websetting ? 'Update' : 'Create' %> Web setting
         </h1>
     </div>
     <div>
         <label for="email" class="block mb-2 text-[19px] font-medium text-gray-900 dark:text-white">Your email</label>
-        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="enter your email" >
+        <input type="email" name="email"  value="<%= websetting ? websetting.email : '' %>" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="enter your email" >
     </div>
     <div>
         <label for="email" class="block mb-2 text-[19px] font-medium text-gray-900 dark:text-white">Phone</label>
-        <input type="email" name="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="phone" >
+        <input type="text" name="phone" value="<%= websetting ? websetting.phone : '' %>" name="phone" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="phone" >
     </div>
     <div>
-        <label for="email" class="block mb-2 text-[19px] font-medium text-gray-900 dark:text-white">Location</label>
-        <input type="text" name="location" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="location" >
+        <label for="location" class="block mb-2 text-[19px] font-medium text-gray-900 dark:text-white">Location</label>
+        <input type="text"  value="<%= websetting ? websetting.location : '' %>" name="location" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="location" >
     </div>
     <div>
         <label for="address" class="block mb-2 text-[19px] font-medium text-gray-900 dark:text-white">Address</label>
-        <input type="text" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="address" >
+        <input type="text" value="<%= websetting ? websetting.address : '' %>" name="address" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-[19px] rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="address" >
     </div>
     <div class="mb-5">
-        <label for="base-input" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Title</label>
-        <input type="text" id="base-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-[18px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="title" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Title</label>
+        <input type="text"  value="<%= websetting ? websetting.title : '' %>" id="title" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-[18px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
 
     <div class="mb-5">
-        <label for="large-input" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Description</label>
-        <input type="text" id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="description" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Description</label>
+        <input type="text" name="description" value="<%= websetting ? websetting.description : '' %>" id="description" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
     
     <div>
-        <label for="small-input" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Logo</label>
-        <input type="file" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="logo" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">Logo</label>
+        <input type="file" name="logo" value="<%= websetting ? websetting.logo : '' %>" id="logo" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
     <div>
-        <label for="small-input" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">FavIcon</label>
-        <input type="file" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <label for="favicon" class="block mb-2 text-[18px] font-medium text-gray-900 dark:text-white">FavIcon</label>
+        <input name="favicon" value="<%= websetting ? websetting.FavIcon : '' %>" type="file" id="favicon" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
     </div>
 
-    <button type="submit" class="w-full text-black bg-slate-500 mt-5 text-[19px]  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-[19px] px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Create</button>
+    <button type="submit" class="w-full text-black bg-slate-500 mt-5 text-[19px]  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-[19px] px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"><%= websetting ? 'Update' : 'Create' %></button>
 </div>
 </form>
   
