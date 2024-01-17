@@ -3,12 +3,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
+    <title>abay mart</title>
 </head>
 <body>
-    <% extend('layout') %>
+ <section class="bg-[#3B82E0] w-full p-8">  
+<nav class="bg-white sticky z-0 rounded-xl ml-8 shadow-lg  border-gray-200 max-w-[95%] dark:bg-gray-900">
+    <div class="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img  src="/image/abay-mart-logo.jpg"  class="h-10" alt="abay-mart-logo" />
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+          </li>
+          <li>
+            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+</section> 
 
-    <h1 class="bg-red-500">hello </h1>
-    <h6 class="text-2xl">demo</h6>
+  <main>
+    <section class="hero z-20 bg-[#3B82E0]">
+        <div class="flex flex-row">
+            <div class="flex flex-col justify-center items-center animate__animated animate__fadeInUp">
+                <!-- Add the 'animate__animated' and 'animate__fadeInUp' classes above -->
+                <h1 class="text-[55px] font-bold text-white max-w-[80%]">E-Commerce Service in Addis Ababa</h1>
+                <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl">CONTACT US</button>
+            </div>
+            <div>
+                <img src="/image/shoppingImage.svg" alt="shopping">
+            </div>
+        </div>
+    </section>
+
+    <section class="about flex flex-row justify-center bg-gradient-to-b from-[#3B82E0] to-white">
+     <div>
+        <img src="/image/onlineShopping.png" class="w-[90%]" alt="online shopping ">
+     </div>
+     <div class="w-1/3 flex flex-col justify-center items-center">
+        <h2 class="text-[40px] font-bold">ABOUT US</h2>
+        <p class="leading-8">We will connect you within 24 working hours with a complete analysis of your requirements. Piotech INDIA support your belief and serve your marketing needs. Get a quick quote on your service request and let us be your partner when it comes to achieving success for your online venture.
+            Schedule a Demo with our Friendly Experts.
+        </p>
+        <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl">Getting Started</button>
+    </div>
+    </section>
+
+    <section>
+        <div class="flex flex-col justify-center items-center">
+        <h5 class="text-[#064F4F] font-bold mt-4 uppercase">Why Choose us </h5>
+        <h2 class="text-[30px] font-bold mt-5">Our Values</h2>
+       </div>
+
+        <div class="flex flex-row justify-center mt-14">
+            <div class="flex flex-col items-center">
+                <img src="/image/image1.png" alt="">
+                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
+                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="/image/image1.png" alt="">
+                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
+                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
+            </div>           
+            <div class="flex flex-col items-center">
+                <img src="/image/image1.png" alt="">
+                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
+                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
+            </div>      
+         </div>
+    </section>
+
+    <section>
+        <div class="flex flex-col justify-center items-center mt-14 ">
+            <h4 class="uppercase text-[#064F4F]">products</h4>
+            <h2 class="text-[30px] font-bold">Explore  popular catagories </h2>
+        </div>
+         
+        <div class="md:grid grid-cols-3 md:grid-cols-5  gap-x-10 m-20">
+            <div class="shadow-2xl rounded-2xl mt-10 p-2 flex justify-center flex-col items-center ">
+                <img src="/image/earphone.png" alt="">
+                <h3 class="font-bold" >Original Beats Solo Pro</h3>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+            <div class="shadow-2xl rounded-2xl mt-10 p-2">
+                <img src="/image/earphone.png" alt="">
+                <h class="font-bold"3>Original Beats Solo Pro</h>
+                <p class="price">Price $333.20</p>
+                <div class="flex">
+                    <img src="/image/star.png" class="w-5 h-5" alt="">
+                    <p class="rating ">4.9</p>
+                    <div class=" max-w-28 flex flex-grow"></div>
+                    <img src="/image/littleImage.png" class="little" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
 </body>
 </html>

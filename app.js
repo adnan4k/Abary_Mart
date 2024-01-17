@@ -31,6 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 const PORT = 5000;
 app.use(methodOverride('_method'));
+app.use('/images',express.static('images'))
 
 app.use(session({
   secret: 'user',
@@ -54,7 +55,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
-  res.render('layout',{title:"Home",myRoute:"/product/view-product"})
+  res.render('index',{title:"Home",myRoute:"/product/view-product"})
 })
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
