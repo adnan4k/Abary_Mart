@@ -37,7 +37,6 @@ export const presentProduct = async(req,res) =>{
 
 
 export const createProduct = async (req,res)=>{
-  console.log("i'm here in product");
     const {
         title,
         image,
@@ -45,7 +44,6 @@ export const createProduct = async (req,res)=>{
         price,
         featured
     } = req.body;
- console.log({title,image,description})
     try {
         const product = new Product ({
             title:title,

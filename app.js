@@ -20,7 +20,9 @@ const storage = multer.diskStorage({
        cb(null,'images')
   },
   filename:(req,file,cb)=>{
-    cb(null,Date.now() + path.extname(file.originalname))
+    // console.log(file,'this is file')
+    cb(null,path.extname(file.originalname))
+    console.log(path.extname(file.originalname),'file name')
   }
 })
 
@@ -55,7 +57,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/',(req,res)=>{
-  res.render('index',{title:"Home",myRoute:"/product/view-product"})
+  res.render('layout',{title:"Home",myRoute:"/product/view-product"})
 })
 
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
