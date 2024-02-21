@@ -41,7 +41,6 @@ export const deleteBanner = async(req,res) =>{
     const id = req.params.id 
     try {
         const deleted = await Banner.findByIdAndDelete(id);
-        console.log(deleted)
         if(!deleted){
             return res.json({message:"items is not doesn't exist"})
         }

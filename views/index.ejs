@@ -2,6 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-xxxxxx" crossorigin="anonymous" />
@@ -44,54 +46,59 @@
 </section> 
 
   <main>
-    <section class="hero z-20 bg-[#3B82E0]">
-        <div class="flex flex-row">
-            <div class="flex flex-col justify-center items-center animate__animated animate__fadeInUp">
+   
+    <div class="hero z-20 bg-[#3B82E0]" >
+        <div class="flex flex-row"
+         data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
+            <div class="flex flex-col justify-center items-center">
                 <!-- Add the 'animate__animated' and 'animate__fadeInUp' classes above -->
-                <h1 class="text-[55px] font-bold text-white max-w-[80%]">E-Commerce Service in Addis Ababa</h1>
-                <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl">CONTACT US</button>
+                <h1 class="text-[55px] font-bold  text-white max-w-[80%]"><%= banners[0].title %></h1>
+                <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl"><%= banners[0].buttonText %></button>
             </div>
             <div>
-                <img src="/image/shoppingImage.svg" alt="shopping">
+                <img  src="http://localhost:5000/images/<%= banners[0].image %>" alt="shopping">
             </div>
         </div>
-    </section>
-
-    <section class="about flex flex-row justify-center bg-gradient-to-b from-[#3B82E0] to-white">
-     <div>
-        <img src="/image/onlineShopping.png" class="w-[90%]" alt="online shopping ">
-     </div>
-     <div class="w-1/3 flex flex-col justify-center items-center">
-        <h2 class="text-[40px] font-bold">ABOUT US</h2>
-        <p class="leading-8">We will connect you within 24 working hours with a complete analysis of your requirements. Piotech INDIA support your belief and serve your marketing needs. Get a quick quote on your service request and let us be your partner when it comes to achieving success for your online venture.
-            Schedule a Demo with our Friendly Experts.
-        </p>
-        <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl">Getting Started</button>
     </div>
-    </section>
+
+    <div class="about flex flex-row justify-center bg-gradient-to-b from-[#3B82E0] to-white">
+     <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+        <img src="http://localhost:5000/images/<%= banners[1].image %>"  class="w-[90%]" alt="online shopping ">
+     </div>
+     <div class="w-1/3 flex flex-col justify-center items-center"
+     data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+     >
+        <h2 class="text-[40px] font-bold"><%= banners[1].title%></h2>
+        <p class="leading-8"><%= banners[1].description %>.
+        </p>
+        <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl"><%= banners[1].buttonText %></button>
+    </div>
+    </div>
 
     <section>
         <div class="flex flex-col justify-center items-center">
         <h5 class="text-[#064F4F] font-bold mt-4 uppercase">Why Choose us </h5>
         <h2 class="text-[30px] font-bold mt-5">Our Values</h2>
        </div>
-
+         
         <div class="flex flex-row justify-center mt-14">
-            <div class="flex flex-col items-center">
-                <img src="/image/image1.png" alt="">
-                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
-                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
-            </div>
-            <div class="flex flex-col items-center">
-                <img src="/image/image1.png" alt="">
-                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
-                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
-            </div>           
-            <div class="flex flex-col items-center">
-                <img src="/image/image1.png" alt="">
-                <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]">Quality Control</h5>
-                <p class="w-1/2 text-center font-semibold">A huge work has been done to prioritize quality for our customers.</p>
-            </div>      
+            <% values.forEach(value => { %>
+                <div class="flex flex-col items-center" 
+                 data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500" >
+                    <img src="http://localhost:5000/images/<%= value.image %>" alt="">
+                    <h5 class="text-[#DC1B1B] font-semibold m-4 text-[20px]"><%=value.title %></h5>
+                    <p class="w-1/2 text-center font-semibold"><%=value.description %></p>
+                </div> 
+           <% }); %>
+                
          </div>
     </section>
 
@@ -102,116 +109,23 @@
         </div>
          
         <div class="md:grid grid-cols-3 md:grid-cols-5  gap-x-10 m-20">
-            <div class="shadow-2xl rounded-2xl mt-10 p-2 flex justify-center flex-col items-center ">
-                <img src="/image/earphone.png" alt="">
-                <h3 class="font-bold" >Original Beats Solo Pro</h3>
-                <p class="price">Price $333.20</p>
+            <% products.forEach(product => { %>
+                <div class="shadow-2xl rounded-2xl mt-10 p-2  flex justify-center flex-col items-center" 
+                data-aos="fade-down"
+                data-aos-easing="linear"
+                data-aos-duration="1500" >
+                <img src="http://localhost:5000/images/<%= product.image %>" alt="">
+                <h3 class="font-bold" ><%=product.description %></h3>
+                <p class="price">Price <%=product.price %>$</p>
                 <div class="flex">
                     <img src="/image/star.png" class="w-5 h-5" alt="">
                     <p class="rating">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
+                    <div class=" w-20 flex flex-grow">1</div>
                     <img src="/image/littleImage.png" class="little" alt="">
                 </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
-            <div class="shadow-2xl rounded-2xl mt-10 p-2">
-                <img src="/image/earphone.png" alt="">
-                <h class="font-bold"3>Original Beats Solo Pro</h>
-                <p class="price">Price $333.20</p>
-                <div class="flex">
-                    <img src="/image/star.png" class="w-5 h-5" alt="">
-                    <p class="rating ">4.9</p>
-                    <div class=" max-w-28 flex flex-grow"></div>
-                    <img src="/image/littleImage.png" class="little" alt="">
-                </div>
-            </div>
+            </div> 
+         <%   }); %>
+           
         </div>
     </section>
 
@@ -360,6 +274,8 @@
       </div>
     </div>
 </footer>
-
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>

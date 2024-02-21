@@ -9,7 +9,7 @@
 </head>
 <body>
     
-<form class="max-w-sm mx-auto" method="post"  action="<%=banner ? '/banner/update-banner/' +banner.id : '/banner/create-banner' %>">
+<form class="max-w-sm mx-auto" method="post"  action="<%=banner ? '/banner/update-banner/' +banner.id : '/banner/create-banner' %>" enctype="multipart/form-data">
     <div class="mb-5">
         <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Create Banner

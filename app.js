@@ -14,6 +14,10 @@ import userRoutes from './route/userRoute.js';
 import path from 'path'
 import multer from 'multer';
 import methodOverride from "method-override"
+import { Product } from './model/Product.js';
+import { Banner } from './model/Banner.js';
+import { Values } from './model/Values.js';
+import { webSetting} from './model/Website-settings.js';
 
 const storage = multer.diskStorage({
   destination:(req,res,cb)=>{
@@ -56,10 +60,29 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/',(req,res)=>{
-  res.render('index',{title:"Home",myRoute:"/product/view-product"})
+app.get('/',async(req,res)=>{
+  let products,values,banners,websettings;
+  try {
+  products = await Product.find();
+  values = await Values.find()
+  banners = await Banner.find()
+  websettings = await webSetting.find()
+} catch (error) {
+   return res.status(500).json({message:"server error"})
+}
+if(!products || !websettings || !banners || !values ){
+   return res.status(404).json({message:"no item found"})
+}
+  res.render('index',{
+  products,values,banners,websettings,
+  title:"Home",
+  myRoute:"/product/view-product"})
 })
 
+
+// return res.render('product',{Products,
+//    title:"Product",
+// myRoute:'/product/present-product'});
 mongoose.connect("mongodb://127.0.0.1:27017/abay-mart")
   .then(() => {
     app.listen(PORT, () => {
