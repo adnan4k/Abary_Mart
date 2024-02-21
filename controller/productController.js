@@ -24,7 +24,6 @@ export const update =  async (req, res) => {
     try {
         const id = req.params.id;
         const product = await Product.findById(id);
-        console.log(product);
         res.render('createProduct', { product });
     } catch (error) {
         res.status(500).send('Error: ' + error.message);
@@ -45,14 +44,16 @@ export const createProduct = async (req,res)=>{
         featured
     } = req.body;
     try {
-        const product = new Product ({
-            title:title,
-            image:image,
-            description:description,
+        const updateData = {
+            title: title,
+            description: description,
             price:price,
-            featured:featured
-
-        })
+            featured:featured,
+        };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+        const product = new Product (updateData)
         const savedProduct = await product.save();
 
         if (!savedProduct) {

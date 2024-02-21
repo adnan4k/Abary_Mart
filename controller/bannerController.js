@@ -15,12 +15,15 @@ export const createBanner = async (req,res)=>{
         } = req.body;
 
     try {
-        const banner = new Banner ({
-            title:title,
-            image:image,
-            description:description,
-            buttonText:buttonText
-        })
+        const updateData = {
+            title: title,
+            description: description,
+            buttonText:buttonText,
+                };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+        const banner = new Banner (updateData)
         const savedBanner = await banner.save();
 
         if (!savedBanner) {

@@ -36,12 +36,15 @@ export const createValues = async (req,res)=>{
     } = req.body;
     
     try {
-        const value = new Values ({
-            title:title,
-            image:image,
-            description:description,
-
-        })
+        const updateData = {
+            title: title,
+            description: description,
+           
+        };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+        const value = new Values (updateData)
         const savedValues = await value.save();
 
         if (!savedValues) {

@@ -41,18 +41,20 @@ export const createwebsiteSetting = async (req,res)=>{
     } = req.body;
 
     try {
-        const websiteSetting = new webSetting ({
-        title:title,
-        description:description,
-        image:image,
-        logo:logo,
-        favicon:favicon,
-        email:email,
-        phone:phone,
-        location:location,
-        address:address
-
-        })
+        const updateData = {
+            title: title,
+            description: description,
+            price:price,
+            logo:logo,
+             favicon:favicon,
+            email:email,
+            phone:phone,
+           location:location
+        };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+        const websiteSetting = new webSetting (updateData)
         const savedwebsiteSetting = await websiteSetting.save();
 
         if (!savedwebsiteSetting) {
