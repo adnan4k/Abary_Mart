@@ -1,14 +1,27 @@
 
-        <%- include('layout',{title:"login"}); -%>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
 
-    </div>
-    <!-- <section class="bg-gray-50 dark:bg-gray-900"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
         <div class="flex flex-col w-1/2 items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                    <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Sign in
                     </h1>
+                    <p class="mt-2 text-center text-sm leading-5 text-gray-500 max-w">
+                        Or
+                        <a href='/user/signup' class="font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                         Create account
+                        </a>
+                      </p>
                     <div class="">
                     <form class="space-y-4 md:space-y-6" action="/user/login" method="post">
                         <div>
@@ -26,13 +39,12 @@
                                 </div> -->
                             </div>
                         </div>
-                        <button type="submit" class="w-full text-black  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
+                        <button type="submit" class=" bg-[#6A64F1] w-full text-white  hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
                         
                     </form>
                 </div>
                 </div>
             </div>
         </div>
-      <!-- </section> -->
 </body>
 </html>
