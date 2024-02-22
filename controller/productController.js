@@ -79,11 +79,16 @@ export const updateProduct = async(req,res,next) =>{
 
 
     try {
-    const product = await Product.findByIdAndUpdate(id,{
-        title:title,
-        image:image,
-       description:description
-    })    
+        const updateData = {
+            title: title,
+            description: description,
+            price:price,
+            featured:featured,
+        };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+    const product = await Product.findByIdAndUpdate(id,updateData)    
        const savedProduct = await product.save();
     if(!savedProduct){
      return res.status(500).json({message:"error while saving"});

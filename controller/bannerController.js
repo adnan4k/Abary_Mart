@@ -70,12 +70,15 @@ export const updateBanner = async(req,res,next) =>{
     
 
     try {
-    const webBanners = await Banner.findByIdAndUpdate(id,{
-        title:title,
-        image:image,
-        buttonText:buttonText,
-        description:description
-    })    
+        const updateData = {
+            title: title,
+            description: description,
+            buttonText:buttonText,
+                };
+        if (req.file) {
+            updateData.image = req.file.filename;
+        }
+    const webBanners = await Banner.findByIdAndUpdate(id,updateData)    
        const savedBanner = await webBanners.save();
     if(!savedBanner){
      return res.status(500).json({message:"error while saving"});

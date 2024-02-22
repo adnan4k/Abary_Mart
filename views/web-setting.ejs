@@ -7,7 +7,7 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                     name
+                     street
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Description
@@ -37,13 +37,13 @@
             <% websetting.forEach(websettings => { %>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <%= websettings.title %>
+                        <%= websettings.street %>
                     </td>
                     <td class="px-6 py-4">
                         <%= websettings.description %>
                     </td>
                     <td class="px-6 py-4">
-                        <%= websettings.logo %>
+                        <img src="http://localhost:5000/images/<%= websettings.logo %>" alt="" class="w-32">
                     </td>
                     
                     <td class="px-6 py-4">
@@ -58,6 +58,7 @@
                     <td class="px-6 py-4">
                         <%= websettings.address %>
                     </td>
+                   
                     <td class="px-6 py-4">
                         <form action="/web-setting/edit/<%= websettings.id %>" class="inline"  method="get">
                             <button type="submit">

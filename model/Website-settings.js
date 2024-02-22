@@ -1,16 +1,13 @@
 import mongoose from "mongoose";
 
 const webSettingSchema = new mongoose.Schema({
-    title:{
+    street:{
         type:String
     },
     description:{
         type:String
     },
     logo:{
-        type:String
-    },
-     favicon:{
         type:String
     },
     email:{

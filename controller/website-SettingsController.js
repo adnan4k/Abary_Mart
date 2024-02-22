@@ -29,11 +29,9 @@ export const presentWebsetting = async(req,res) =>{
 export const createwebsiteSetting = async (req,res)=>{
   
     const {
-        title,
-        image,
+        street,
         description,
         logo,
-        favicon,
         email,
         phone,
         location,
@@ -42,17 +40,15 @@ export const createwebsiteSetting = async (req,res)=>{
 
     try {
         const updateData = {
-            title: title,
+            street: street,
             description: description,
-            price:price,
-            logo:logo,
-             favicon:favicon,
             email:email,
+            address:address,
             phone:phone,
            location:location
         };
         if (req.file) {
-            updateData.image = req.file.filename;
+            updateData.logo = req.file.filename;
         }
         const websiteSetting = new webSetting (updateData)
         const savedwebsiteSetting = await websiteSetting.save();
@@ -72,28 +68,30 @@ export const createwebsiteSetting = async (req,res)=>{
 // } 
 export const updateSetting = async(req,res,next) =>{
     const {   
-        title,
+        street,
         image,
         logo,
+        description,
         favicon,
         email,
         phone,
         location,
         address} = req.body;
     const {id} = req.params;
-    
-
+   
     try {
-    const webSettings = await webSetting.findByIdAndUpdate(id,{
-        title:title,
-        image:image,
-        logo:logo,
-        favicon:favicon,
-        phone:phone,
-        location:location,
-        address:address,
-        email:email
-    })    
+        const updateData = {
+            street: street,
+            description: description,
+            email:email,
+            address:address,
+            phone:phone,
+           location:location
+        };
+        if (req.file) {
+            updateData.logo = req.file.filename;
+        }
+    const webSettings = await webSetting.findByIdAndUpdate(id,updateData)    
        const savedSetting = await webSettings.save();
     if(!savedSetting){
      return res.status(500).json({message:"error while saving"});
