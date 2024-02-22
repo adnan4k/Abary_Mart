@@ -20,6 +20,7 @@ import { Values } from './model/Values.js';
 import { webSetting} from './model/Website-settings.js';
 import TestimonyRoutes from './route/testimonyRoute.js';
 import { Testimony } from './model/Testimony.js';
+import messageRoute from './route/messageRoute.js';
 
 const storage = multer.diskStorage({
   destination:(req,res,cb)=>{
@@ -55,6 +56,7 @@ app.use('/values',upload.single('image'),valuesRoutes)
 app.use('/testimony',upload.single('image'),TestimonyRoutes)
 app.use('/web-setting',upload.single('logo'),websettingRoutes)
 app.use('/user',upload.single('image'),userRoutes)
+app.use('/message',messageRoute)
 app.use(express.static(__dirname + '/public'));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(express.static('public')); 
@@ -71,7 +73,6 @@ app.get('/',async(req,res)=>{
   banners = await Banner.find()
   testimonys = await Testimony.find()
   websettings = await webSetting.find()
-  console.log(websettings,'in app')
 } catch (error) {
    return res.status(500).json({message:"server error"})
 }

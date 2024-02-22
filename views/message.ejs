@@ -1,0 +1,59 @@
+<%- include('layout'); -%>
+
+<div class="relative overflow-x-auto w-full h-full">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Subject
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Message
+                </th>
+            
+                <th scope="col" class="px-6 py-3">
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% message.forEach(messages => { %>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <%= messages.name %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <%= messages.email %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <%= messages.subject %>
+                    </td>
+                    <td class="px-6 py-4">
+                        <%= messages.message %>
+                    </td>
+                   
+                    <td class="px-6 py-4">
+        
+                        <form action="/message/delete-message/<%= messages.id %>?_method=delete" class="inline" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit">
+                                <i class="fas fa-trash m-3"></i>
+                            </button>
+                        </form>
+                                          
+                          </td>
+                   
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

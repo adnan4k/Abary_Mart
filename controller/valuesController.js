@@ -2,7 +2,6 @@ import {Values} from "../model/Values.js"
 
 export const deleteValues = async(req,res) =>{
     const id = req.params.id 
-         console.log("id",id)
     try {
         const deleted = await Values.findByIdAndDelete(id);
         if(!deleted){

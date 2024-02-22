@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/styles/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Document</title>
+    <title>Abay Mart</title>
 </head>
 <body>
    
@@ -43,8 +43,10 @@
 
         <h1 class="text-2xl"><%= title ? title : "" %></h1>
         <form  action="<%= myRoute === 'login' ? '/user/view' : myRoute %>" method="get" class="text-center inline-block">
-            <button type="submit" class="text-blue-700 bg-blue-800 :ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl ml-60 px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 outline-none ring-blue-800">Add</button>
-          </form>     
+          <% if(title !== "Message") { %>
+            <button type="submit" class="text-blue-700 bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl ml-60 px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 outline-none ring-blue-800">Add</button>
+        <% } %>
+                  </form>     
       </ul>
     </div>
     </div>
