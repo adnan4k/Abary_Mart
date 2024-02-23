@@ -72,6 +72,7 @@ export const updateProduct = async(req,res,next) =>{
     const { 
           
         title,
+        price,
         image,
         description,
     } = req.body;

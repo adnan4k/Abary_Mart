@@ -29,19 +29,29 @@
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li class="my-1 text-lg">
-            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+            <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
           </li>
           <li class="my-1 text-lg">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+            <a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
           </li>
           <li class="my-1 text-lg">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+            <a href="#product" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</a>
           </li>
           <li class="my-1 text-lg">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+            <a href="#values" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Values</a>
           </li>
           <li class="my-1 text-lg">
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            <a href="#testimony" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Testimony</a>
+          </li>
+          <li class="my-1 text-lg">
+            <a href="#contact" class="block  px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <button class="bg-[#F66604]  justify-end text-white font-semibold w-24 h-8 rounded-2xl">Contact</button>
+            </a>
+          </li>
+          <li class="my-1 text-lg">
+            <a href="/user/view" class="block  px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                <button class="bg-[#F66604]  mr-10 justify-end text-white font-semibold w-24 h-8 rounded-2xl">Signin</button>
+            </a>
           </li>
         </ul>
       </div>
@@ -142,17 +152,44 @@
             <p class="uppercase text-[17px] font-semibold mt-5 text-[#064F4F]">testimonials</p>
             <h3 class="font-bold text-black text-[45px] first-letter:uppercase">Read What others  Have to say</h3>
         </div>
-
-        <div class="testimony flex-col md:flex-row md:flex justify-center items-center gap-14 m-20">
-            <% testimonys.forEach(testimony => { %>
-                <div class="bg-[#8D8DD5] mt-10 rounded-2xl flex flex-col justify-center items-center">
-                    <img src="http://localhost:5000/images/<%= testimony.image %>" class="-mt-14 h-28 w-28 rounded-full" alt="">
-                    <h3 class="font-bold text-white text-[23px] mt-5">-<%= testimony.name %></h3>
-                    <p class="p-6 text-white"><%= testimony.description  %></p>
-                </div>
-          <%  }); %>
-          
+        
+        <!-- Swiper -->
+<div class="swiper-container swiper-wrapper-custom testimony-slider m-20">
+    <div class="swiper-wrapper">
+      <% testimonys.forEach(testimony => { %>
+      <div class="swiper-slide">
+        <div class="bg-[#8D8DD5] mt-10 rounded-2xl flex flex-col justify-center items-center">
+          <img src="http://localhost:5000/images/<%= testimony.image %>" class="-mt-14 h-28 w-28 rounded-full" alt="">
+          <h3 class="font-bold text-white text-[23px] mt-5">-<%= testimony.name %></h3>
+          <p class="p-6 text-white"><%= testimony.description %></p>
         </div>
+      </div>
+      <% }); %>
+    </div>
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div>
+    Add Navigation
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div> -->
+  </div>
+  
+  <style>
+.swiper-wrapper-custom {
+    max-height: 600px;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: auto; /* Centers the swiper */
+    padding: 20px; /* Adds some space around the swiper, optional */
+    overflow: hidden; /* Prevents horizontal scrolling caused by wide slides */
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+
+    
+    </style
     </section>
 
      <section id="contact" >
@@ -277,10 +314,52 @@ data-aos-duration="1500"
          </div>
     </div>
 </footer>
+>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    
-</script>
+  var swiper = new Swiper('.testimony-slider', {
+    slidesPerView: 3, // Show 3 slides per view
+    spaceBetween: 30, // Space between slides in px
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    // Responsive breakpoints
+    breakpoints: {
+        // when window width is <= 640px
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        // when window width is <= 768px
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        // when window width is <= 1024px
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+    }
+});
+
+  </script>
+  
 <script>
     AOS.init();
   </script>
