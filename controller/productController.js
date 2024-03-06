@@ -41,14 +41,12 @@ export const createProduct = async (req,res)=>{
         image,
         description,
         price,
-        featured
     } = req.body;
     try {
         const updateData = {
             title: title,
             description: description,
             price:price,
-            featured:featured,
         };
         if (req.file) {
             updateData.image = req.file.filename;
@@ -84,7 +82,6 @@ export const updateProduct = async(req,res,next) =>{
             title: title,
             description: description,
             price:price,
-            featured:featured,
         };
         if (req.file) {
             updateData.image = req.file.filename;
