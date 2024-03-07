@@ -553,3 +553,21 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
+.c-item {
+  height: 480px;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.nav {
+  border: none !important; /* Removes border */
+}
+
+.nav .container, .nav .container-fluid, .nav .container-sm, .nav .container-md, .nav .container-lg, .nav .container-xl, .nav .container-xxl {
+  padding: 0; /* Adjust padding as necessary */
+  height: auto; /* Adjust height or set it explicitly */
+}

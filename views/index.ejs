@@ -1,5 +1,5 @@
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -12,11 +12,22 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
   />
+  <!-- for swiper  -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!--  
+bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body class="overflow-x-hidden" >
- <section class="bg-[#3B82E0] w-full p-8">  
-<nav class="bg-white sticky z-0 rounded-xl ml-8 shadow-lg  border-gray-200 max-w-[95%] dark:bg-gray-900">
-    <div class="max-w-screen-xl  flex flex-wrap items-center justify-between mx-auto p-4">
+ <section class=" w-full p-8">  
+<nav class="bg-white sticky z-0 rounded-xl ml-8 shadow-lg  -gray-200 max-w-[95%] dark:bg-gray-900">
+    <div class="max-w-screen-xl  flex flex-wrap items-center justify-between ">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img  src="/image/5.png"  class="h-14" alt="abay-mart-logo" />
       </a>
@@ -27,29 +38,29 @@
           </svg>
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          <li class="my-1 text-lg">
-            <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+        <ul class="font-medium flex flex-col p-4 md:p-0   -gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:-gray-700">
+          <li class=" text-lg">
+            <a href="/" class="block  px-0 text-black bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+          <li class=" text-lg">
+            <a href="#about" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="#product" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</a>
+          <li class=" text-lg">
+            <a href="#product" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="#values" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Values</a>
+          <li class=" text-lg">
+            <a href="#values" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Values</a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="#testimony" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Testimony</a>
+          <li class=" text-lg">
+            <a href="#testimony" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Testimony</a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="#contact" class="block  px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <li class=" text-lg">
+            <a href="#contact" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                 <button class="bg-[#F66604]  justify-end text-white font-semibold w-24 h-8 rounded-2xl">Contact</button>
             </a>
           </li>
-          <li class="my-1 text-lg">
-            <a href="/user/view" class="block  px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <li class=" text-lg">
+            <a href="/user/view" class="block  px-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                 <button class="bg-[#F66604]  mr-10 justify-end text-white font-semibold w-24 h-8 rounded-2xl">Signin</button>
             </a>
           </li>
@@ -60,22 +71,93 @@
 </section> 
 
   <main>
-   
-    <div class="hero z-20 bg-[#3B82E0] flex flex-col" id="home" >
-        <div class="flex flex-col sm:flex sm:flex-row"
-         data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1500">
-            <div class="flex flex-col justify-center items-center">
-                <!-- Add the 'animate__animated' and 'animate__fadeInUp' classes above -->
-                <h1 class="text-[55px] font-bold  text-white max-w-[80%]"><%= banners[0].title %></h1>
-                <button class="bg-[#F66604] mt-10 mr-10 justify-end text-white font-semibold w-40 h-10 rounded-2xl"><%= banners[0].buttonText %></button>
-            </div>
-            <div>
-                <img  src="http://localhost:5000/images/<%= banners[0].image %>" alt="shopping">
-            </div>
+    
+    <section class="">
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </div>
+    
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="https://images.unsplash.com/photo-1579033461380-adb47c3eb938?fit=crop&w=1964&q=100" class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="mt-5 fs-3 text-uppercase">Buy More Product From Captain Mart</p>
+              <h1 class="display-1 fw-bolder text-capitalize">The Captain Mart</h1>
+              <button class="btn btn-primary px-4  fs-5 mt-5">Learn More</button>
+            </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?fit=crop&w=2134&q=100" class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="text-uppercase fs-3 mt-5" data-aos="zoom-in">The season has arrived to buy</p>
+              <p class="display-1 fw-bolder text-capitalize">More available Product</p>
+              <button class="btn btn-primary px-4  fs-5 mt-5" data-bs-toggle="modal"
+                data-bs-target="#booking-modal">Learn More</button>
+            </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src="https://images.unsplash.com/photo-1612686635542-2244ed9f8ddc?fit=crop&w=2070&q=100" class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-4">
+              <p class="text-uppercase fs-3 mt-5" data-aos="zoom-in">You will be satisfied of our product</p>
+              <p class="display-1 fw-bolder text-capitalize">Go and Buy Our Product</p>
+              <button class="btn btn-primary px-4  fs-5 mt-5" data-bs-toggle="modal"
+                data-bs-target="#booking-modal">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </section>
+    <script>
+      var swiper = new Swiper('.front', {
+        slidesPerView: 1, // Show 3 slides per view
+        spaceBetween: 30, // Space between slides in px
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is <= 640px
+            440: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            // when window width is <= 768px
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 30
+            },
+            // when window width is <= 1024px
+            1024: {
+                slidesPerView: 1,
+                spaceBetween: 30
+            },
+        }
+    });
+    
+      </script>
+      
 
     <div class="about flex flex-col sm:flex sm:flex-row items-center justify-center bg-gradient-to-b from-[#3B82E0] to-white" id="about">
      <div data-aos="fade-down"
@@ -207,7 +289,7 @@
             ><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4917358402026!2d38.79768870791539!3d9.018826791004726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768
                 !4f13.1!3m3!1m2!1s0x164b8f3eb194fd17%3A0xc1ed55aec6a3c45f!
                 2zQWJheSBNYXJ0IOGKoOGJo-GLrSDhjIjhiaDhi6s
-                !5e0!3m2!1sen!2set!4v1705665383556!5m2!1sen!2set" width="500" height="375" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                !5e0!3m2!1sen!2set!4v1705665383556!5m2!1sen!2set" width="500" height="375" style=":0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
 
  <div 
  
@@ -218,20 +300,20 @@ data-aos-easing="linear"
 data-aos-duration="1500"
 >
     <div class="mb-8">
-      <input type="name" id="name" name="name"  class="shadow-xl w-96 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:border-blue-500 dark:shadow-xl-light" placeholder="Your Name" required>
+      <input type="name" id="name" name="name"  class="shadow-xl w-96 bg-gray-50  -gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:-blue-500 block  p-2.5 dark:bg-gray-700 dark:-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:-blue-500 dark:shadow-xl-light" placeholder="Your Name" required>
     </div>
     <div class="mb-8">
-      <input type="email" id="email" name="email" class="shadow-xl bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:border-blue-500 dark:shadow-xl-light" placeholder="Your Email" required>
+      <input type="email" id="email" name="email" class="shadow-xl bg-gray-50  -gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:-blue-500 dark:shadow-xl-light" placeholder="Your Email" required>
     </div>
     <div class="mb-8">
-      <input type="text" id="subject" name="subject" class="shadow-xl bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:border-blue-500 dark:shadow-xl-light" placeholder="Your Subject" required>
+      <input type="text" id="subject" name="subject" class="shadow-xl bg-gray-50  -gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:-blue-500 dark:shadow-xl-light" placeholder="Your Subject" required>
     </div>
     <div class="mb-8">
-      <input type="text" id="message" name="message"  class="h-20 shadow-xl bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:border-blue-500 dark:shadow-xl-light" placeholder="Your Message" required>
+      <input type="text" id="message" name="message"  class="h-20 shadow-xl bg-gray-50  -gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:-gray-600 dark:placeholder-gray-[#5C5C5C] dark:text-white dark:focus:ring-blue-500 placeholder:text-[#5C5C5C] placeholder:text-[16px] placeholder:font-semibold dark:focus:-blue-500 dark:shadow-xl-light" placeholder="Your Message" required>
     </div>
     
     
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send Your Message</button>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 .5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Send Your Message</button>
   </form>
   
                 </div>
@@ -242,45 +324,45 @@ data-aos-duration="1500"
 
 <footer class="bg-[#2F2E41] text-white flex justify-center items-center">
     <div class="grid grid-cols-1 sm:grid-cols-5  py-10  ml-[10%] " >
-        <div class="sm:mt-0 my-10">
-            <img src="http://localhost:5000/images/<%= websettings[0].logo %>" alt="abay-mart-logo">
+        <div class="sm:mt-0 0">
+            <img src="http://localhost:5000/images/<%= websettings[0].logo %>" class="h-[0%]" alt="captain-mart-logo">
             <h3 class="">
                 <h2 class="text-lg font-semibold"><%= websettings[0].description %></h2>
 
             </h3> 
         </div>
-        <div class="ml-10 my-10">
+        <div class="ml-10 0">
             <ul>
                 <h2 class="mb-4 font-semibold text-xl">Abay Mart</h2>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="/">Home</a>
                   </li>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="#about">About Us</a>
                   </li>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="#contact">Contact Us</a>
                   </li>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="#values">Values</a>
                   </li>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="#testimony">Testimony</a>
                   </li>
-                  <li class="my-1 text-lg">
+                  <li class=" text-lg">
                     <a href="#product">Products</a>
                   </li>
             </ul>
         </div>
 
-        <div class="my-10">
+        <div class="0">
             <h3 class="mb-4 text-xl">Legal</h3>
-            <p class="my-1 text-lg">Terms of Use</p>
-            <p class="my-1 text-lg">Privacy and Policy</p>
-            <p class="my-1 text-lg">Terms and Condition</p>
+            <p class=" text-lg">Terms of Use</p>
+            <p class=" text-lg">Privacy and Policy</p>
+            <p class=" text-lg">Terms and Condition</p>
         </div>
 
-        <div class="my-10">
+        <div class="0">
          <h3 class="mb-4 text-xl">CONTACT US</h3>
          <div class="my-3">
             <span class="mr-5 inline"> <img src="/image/letter.png" class="inline-block" alt="email">  </span>
@@ -301,7 +383,7 @@ data-aos-duration="1500"
             </div>
         </div>
 
-        <div class=" ml-0 sm:ml-10 justify-center my-10 items-center">
+        <div class=" ml-0 sm:ml-10 justify-center 0 items-center">
             <a href="/"> 
                 <img src="/image/Instagram.png" class="my-7" alt="">
             </a>
@@ -316,10 +398,7 @@ data-aos-duration="1500"
 </footer>
 >
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
   var swiper = new Swiper('.testimony-slider', {
     slidesPerView: 3, // Show 3 slides per view
@@ -341,7 +420,7 @@ data-aos-duration="1500"
     // Responsive breakpoints
     breakpoints: {
         // when window width is <= 640px
-        640: {
+        440: {
             slidesPerView: 1,
             spaceBetween: 20
         },
@@ -363,5 +442,8 @@ data-aos-duration="1500"
 <script>
     AOS.init();
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
